@@ -2,9 +2,9 @@ import requests
 import utilities
 
 
-def open_yank(ticker, api_key):
+def close_yank(ticker, api_key):
     response = requests.get('https://api.polygon.io/v2/aggs/ticker/' + ticker + '/prev?adjusted=true&apiKey=' + api_key).json()
-    open = response["results"][0]["o"]
+    open = response["results"][0]["c"]
     return open
 
 

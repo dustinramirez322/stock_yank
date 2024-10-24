@@ -19,8 +19,8 @@ for t in ticker:
         delay = True
     else:
         delay = False
-    open = stock_yank.open_yank(t, api_key)
-    close = stock_yank.last_close_yank(t, api_key)
+    open = stock_yank.last_close_yank(t, api_key)
+    close = stock_yank.close_yank(t, api_key)
     change = utilities.close_diff(open, close)
     message = (f"{t} Open: {str(open)} Close: {str(close)} Change: {change}%")
     webex_message.send_message(message)
